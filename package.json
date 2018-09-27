@@ -1,7 +1,7 @@
 {
   "name": "react-complete-guide",
   "version": "0.1.0",
-  "homepage": "https://kwechetel.github.io/myapp",
+  "homepage": "http://klastacademy.co.zw",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.0",
