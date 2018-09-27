@@ -10,10 +10,15 @@
     top: 10%;
 }
 nav button {
-    height: 80%;
-    margin-top: 3%;
+    height: 5vh;
+    margin-top: .5vh;
     margin-right: 2vh;
     font-size: 1.999vh;
-    background: none;
     border: none;
+    background: none;
+}
+nav button#proPic {
+    width: 5vh;
+    background: #ccc;
+    color: #ccc;
 }
