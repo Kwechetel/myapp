@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Header/Header';
+import Person from './Include/Header';
 
 class App extends Component {
   state = {
@@ -42,7 +42,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Hi buddy, I'm a react app</h1>
+        <h1>Hi Last, I'm a react app</h1>
         <p>This is really working!</p>
         <button style={style} onClick={() => this.switchNameEvent("Chaps")}>Switch Name</button>
 
