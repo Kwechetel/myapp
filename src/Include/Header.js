@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Person.css";
+import "./Header.css";
 
-const person = (props) => {
+const Header = (props) => {
     return (
         <div className="Person">
             <p onClick={props.click}>I'm a {props.name} and I am {props.age} old!</p>
@@ -9,6 +9,6 @@ const person = (props) => {
             <input type="text" onChange={props.onchanged}  value={props.name}/>
         </div>
     )
-};
+}
 
-export default person;
+export default Header;
