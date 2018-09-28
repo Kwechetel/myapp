@@ -34,7 +34,7 @@ const Header = (props) => {
                     <img id="logo" src="klast-logo.svg" />
 
                     <div style={style} className="pull-right">
-                    <button>Hi LastK</button><button id="proPic">Last</button>
+                    <button className="name">Hi LastK</button><button id="proPic"></button>
                     </div>
                 </nav>
             </div>

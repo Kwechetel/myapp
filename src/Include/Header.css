@@ -2,6 +2,7 @@
     width: 100%;
     height: 6vh;
     position: relative;
+    font-weight: lighter;
 }
 #logo {
     height: 80%;
@@ -17,8 +18,13 @@ nav button {
     border: none;
     background: none;
 }
+nav button.name  {
+    margin-right: 7vh;
+}
 nav button#proPic {
     width: 5vh;
     background: #ccc;
     color: #ccc;
+    position: absolute;
+    right: .2vh;
 }

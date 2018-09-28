@@ -9,7 +9,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Header user="{1}" />
+        <Header user={Math.floor(Math.random() * 2)} />
         <Footer />
       </div>
     );
