@@ -7,10 +7,6 @@ const Header = (props) => {
         paddingRight: "2vh"
     };
 
-    const specStyle = {
-        boxShadow: "0 1px 1px #ccc"
-    };
-
     let userSign = props.user;
 
     let x = (
@@ -29,7 +25,7 @@ const Header = (props) => {
     ); 
     let y = (
         <React.Fragment>
-            <div style={specStyle} className="Header">
+            <div style={{boxShadow: "0 1px 1px #ccc"}} className="Header">
                 <nav>
                     <img id="logo" src="klast-logo.svg" />
 
