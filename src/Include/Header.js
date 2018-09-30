@@ -13,7 +13,7 @@ const Header = (props) => {
         <React.Fragment>
             <div className="Header">
                 <nav>
-                    <img id="logo" src="klast-logo.svg" />
+                    <img id="logo" src="klast-logo.svg" alt= "Logo" />
 
                     <div style={style} className="pull-right">
                         <button>Log In</button> 
@@ -27,7 +27,7 @@ const Header = (props) => {
         <React.Fragment>
             <div style={{boxShadow: "0 1px 1px #ccc"}} className="Header">
                 <nav>
-                    <img id="logo" src="klast-logo.svg" />
+                    <img id="logo" src="klast-logo.svg" alt= "Logo" />
 
                     <div style={style} className="pull-right">
                     <button className="name">Hi LastK</button><button id="proPic"></button>
