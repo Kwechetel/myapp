@@ -8,8 +8,9 @@ export default class PersonList extends React.Component {
     }
     componentDidMount() {
         
-        axios.get(`https://server.klast.academy/index.php`)
+        axios.post("http://server.klast.academy/index.php")
         .then(res => {
+            console.log(res);
             const persons = res.data;
             this.setState({person: persons});
             console.log(persons);
@@ -19,7 +20,7 @@ export default class PersonList extends React.Component {
   render() {
     return (
       <ul>
-          {this.state.person.map( (person, index) => <React.Fragment><li key={index}>{person.name}</li></React.Fragment>)}
+          {this.state.person.map( (person, index) => <li key={index}>{person.name} aged {person.age}</li>)}
       </ul>
     )
   }
