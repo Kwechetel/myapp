@@ -8,7 +8,7 @@ export default class PersonList extends React.Component {
     }
     componentDidMount() {
         
-        axios.post("http://server.klast.academy/includes/index.php")
+        axios.post("https://server.klast.academy/includes/index.php")
         .then(res => {
             console.log(res);
             const persons = res.data;
