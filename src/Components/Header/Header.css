@@ -1,8 +1,10 @@
 .Header, nav {
+    z-index: 999999999999;
     width: 100%;
     height: 6vh;
     position: relative;
     font-weight: lighter;
+    background: rgb(255, 255, 255);
 }
 #logo {
     height: 80%;
@@ -17,6 +19,7 @@ nav button {
     font-size: 1.999vh;
     border: none;
     background: none;
+    cursor: pointer;
 }
 nav button.name  {
     margin-right: 7vh;
@@ -27,4 +30,23 @@ nav button#proPic {
     color: #ccc;
     position: absolute;
     right: .2vh;
+}
+#navMenu {
+    height: 20vh;
+    width: 10vw;
+    /*background: rgb(255, 255, 255);*/
+    box-shadow: 0 0 1vh #00000050;
+    position: absolute;
+    right: 2vh;
+    display: none;
+}
+#navMenu button {
+    display: block;
+    width: 10vw;
+    margin: 2vh 0;
+    font-size: 2vh;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

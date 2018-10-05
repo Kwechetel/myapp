@@ -6,38 +6,47 @@ const Header = (props) => {
         height: "100%",
         paddingRight: "2vh"
     };
+    const userNavStyle = {
+        boxShadow: "0 1px 1px #ccc",
+        position: "fixed",
+        top: "0"
+    }
 
     let userSign = props.user;
 
-    let x = (
+    let guest = (
         <React.Fragment>
             <div className="Header">
                 <nav>
-                    <img id="logo" src="klast-logo.svg" alt= "Logo" />
+
+                    {props.logo}
 
                     <div style={style} className="pull-right">
-                        <button>Log In</button> 
-                        <button>Sign Up</button>
+                        {props.navName}
                     </div>
                 </nav>
             </div>
         </React.Fragment>
     ); 
-    let y = (
+    let users = (
         <React.Fragment>
-            <div style={{boxShadow: "0 1px 1px #ccc"}} className="Header">
+            <div style={userNavStyle} className="Header">
                 <nav>
-                    <img id="logo" src="klast-logo.svg" alt= "Logo" />
+
+                    {props.logo}
 
                     <div style={style} className="pull-right">
-                    <button className="name">Hi LastK</button><button id="proPic"></button>
+                        {props.userNav}
                     </div>
                 </nav>
+                <div style={{display: props.menu}} id="navMenu">
+                    {props.menuLinks}
+                </div>
             </div>
         </React.Fragment>
     );
 
-    return userSign === 1 ? x : y;
+    return userSign === null? guest : users;
 }
 
 export default Header;

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = (props) => {
     
     return (
-        <div className="Footer">
-            
+        <div style={{display: props.style}} className="Footer">
+            <h1>Footer</h1>
         </div>
     );
 }

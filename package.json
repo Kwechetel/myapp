@@ -8,6 +8,7 @@
     "axios": "^0.18.0",
     "codemirror": "^5.40.2",
     "gh-pages": "^2.0.0",
+    "querystringify": "^2.0.0",
     "react": "^16.4.0",
     "react-codemirror2": "^5.1.0",
     "react-dom": "^16.4.0",

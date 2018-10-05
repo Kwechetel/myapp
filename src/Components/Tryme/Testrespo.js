@@ -1,19 +1,21 @@
 import React from 'react';
-
 import axios from 'axios';
+import queryString from 'query-string';
 
 export default class PersonList extends React.Component {
     state = {
         person:[{}]
     }
+
     componentDidMount() {
+
+        const qs = queryString;
         
-        axios.post("http://server.klast.academy/includes/index.php")
+        axios.post("http://server.klast.academy/includes/index.php", qs.stringify({name: "last", surname: "Kwechete"}))
         .then(res => {
-            console.log(res);
             const persons = res.data;
             this.setState({person: persons});
-            console.log(persons);
+            console.log(qs.stringify(persons));
         })
     }
 
