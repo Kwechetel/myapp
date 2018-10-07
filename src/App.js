@@ -58,7 +58,7 @@ class App extends Component {
           <Header menu={this.state.usermenu} user={this.state.login} 
             navName={
               <React.Fragment>
-                <NavLink to='/tryme'><button style={{
+                <NavLink to='/tryme/1'><button style={{
                   background: "#1C232E", height: "auto", color: "white", fontSize: "1.5vh", padding: "0.5vh 1vh"
                   }}>Try Me</button></NavLink>
                 <NavLink to='/login'><button>Log In</button></NavLink>
@@ -71,7 +71,7 @@ class App extends Component {
             userNav={
               <React.Fragment>
                 <NavLink to='/course/javascript'><button>Learn</button></NavLink>
-                <button className="name">Hi LastK</button>
+                <button className="name">Hi Last</button>
                 <button onClick={this.onClickUserMenu.bind(this)} id="proPic"></button>
               </React.Fragment>
             }
@@ -139,7 +139,7 @@ class App extends Component {
 
           {/*Sample course page*/}
 
-          <Route path='/tryme' exact strict render={
+          <Route path='/tryme/:testnum' exact strict render={
             () => {
               return (
                 
