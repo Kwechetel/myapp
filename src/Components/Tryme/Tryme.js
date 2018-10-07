@@ -79,6 +79,8 @@ class Codemirror extends Component {
             .then(res => {
                 const response = res.data;
 
+                console.log(response);
+
                 var myIframe = logger,
                 iframeWindow = myIframe.contentWindow || myIframe,
                 iframeDocument = myIframe.contentDocument || iframeWindow.document;
