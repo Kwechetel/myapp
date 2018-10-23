@@ -14,7 +14,7 @@ class Welcome extends Component{
         document.querySelector(".Header").style.background = "none";
         return(
             <div style={style} className="appContainer welcome">
-                <div style={{padding: "10vh 10vw", height: "70vh"}} className="hello">
+                <div style={{padding: "10vh 10vw", height: "76vh"}} className="hello">
                     <Klastloader />
                     
                     <Typing>
