@@ -1,0 +1,1 @@
+export const Public_URL = "http://server.klast.academy";

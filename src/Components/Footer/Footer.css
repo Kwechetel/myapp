@@ -1,3 +1,57 @@
 .Footer{
-    color: red;
+    border-top: 0.05vh solid rgba(0, 0, 0,0.25);
+    color: inherit;
+}
+.mainFooter {
+    padding: 2vh 12vw; 
+}
+.mainFooter img {
+    height: 2.8vh;
+    margin-right: 0.5vh;
+}
+.mainFooter h2 {
+    font-weight: lighter;
+    font-size: 2vh;
+}
+.mainFooter button {
+    display: block;
+    border: none;
+    background: none;
+    margin: 2vh 0;
+    font-size: 1.8vh;
+    cursor: pointer;
+}
+.minFooter {
+    padding: 1.5vh 5vh;
+    text-align: center;
+}
+
+.minFooter button {
+    background: none;
+    border: none;
+    margin-top: 2vh;
+    font-size: 1.65vh;
+}
+
+.minFooter img {
+    height: 6.5vh;
+    margin-right: 1vw;
+}
+
+.Policy {
+    border-top: 0.03vh solid #ccc; 
+}
+.btnPolicy {
+    color: rgb(29, 116, 173);
+    cursor: pointer;
+}
+.Policy button {
+    display: inline;
+    font-size: 1.8vh;
+    padding: 0;
+}
+button.fontsAw {
+    font-size: 2.5vh;
+    padding: 0 0 0 1.5vh;
+    cursor: pointer;
 }

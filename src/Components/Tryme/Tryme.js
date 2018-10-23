@@ -2,6 +2,11 @@ import CodeMirror from '@uiw/react-codemirror';
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTerminal } from '@fortawesome/free-solid-svg-icons';
+
+import {Public_URL} from '../Server/Server';
+
 import axios from 'axios';
 import queryString from 'query-string';
 
@@ -18,7 +23,7 @@ import 'codemirror/theme/monokai.css';
 
 class Codemirror extends Component {
     state = {
-        value: 'const a = (x) => {\n let y = 10 * x; \n return "hello"; \n} \n // Call this function on line bellow:',
+        value: 'const a = (x) => {\n let y = 10 * x; \n return console.log("hello"); \n} \n // Call this function on line bellow:',
         testnum: 0
     }
     
@@ -47,6 +52,10 @@ class Codemirror extends Component {
 
     }
 
+    onClickMinimizeCosole = () => {
+        document.querySelector("#runConsoleContainer").style.display = "none";
+    }
+
     handleKeyUp = (e) => {
         localStorage.setItem("tryme", JSON.stringify({value: this.state.value, testnum: this.state.testnum}));
     }
@@ -70,16 +79,17 @@ class Codemirror extends Component {
     consoleLoger = () => {
 
             let logger = document.querySelector("#appConsole");
+            document.querySelector("#runConsoleContainer").style.display = "block";
 
             logger.contentWindow.location.reload();
 
             const qs = queryString;
         
-            axios.post("http://server.klast.academy/console/tryme.php", qs.stringify({codes: this.state.value}))
+            axios.post(Public_URL+`/console/tryme.php`, qs.stringify({codes: this.state.value}))
             .then(res => {
                 const response = res.data;
 
-                console.log(response);
+                //console.log(response);
 
                 var myIframe = logger,
                 iframeWindow = myIframe.contentWindow || myIframe,
@@ -90,27 +100,28 @@ class Codemirror extends Component {
                 iframeDocument.close();
                 
             })
+
+            console.clear();
         
-    }
-
-    clearConsole = () => {
-        let logger = document.querySelector("#appConsole");
-
-        logger.contentWindow.location.reload();
     }
 
     resizeIframe = (e) => {
 
-        let logg = document.querySelector("#appConsole").contentWindow;
-        document.querySelector("#appConsole").style.height = logg.document.body.offsetHeight + "px";
+        let selectLogger = document.querySelector("#appConsole");
+        let loggerFrame = selectLogger.contentWindow;
+
+        selectLogger.style.height =  "20px";
+
+        selectLogger.style.height = (loggerFrame.document.body.offsetHeight + 10) + "px";
         
       }
 
 
-    render() {
-            
+    render() {           
         return (
             <div id="tryme" className="appContainer" >
+
+                <button className="funcBtn pull-right" style={{margin: "2vh 5vh"}} onClick={this.onClickRest}>Restart</button>
 
                 <div className="row" style={{padding: "10vh 25vw"}}>
 
@@ -141,18 +152,15 @@ class Codemirror extends Component {
                         />
                         </div>
                         <div id="runConsoleContainer">
-                            <div style={{width: "10%", fontSize: "3vh", color: "white", textAlign: "center", padding: "1vh"}}>../</div>
+                            <div className="pull-left" style={{width: "10%", fontSize: "1.5vh", color: "white", textAlign: "center", padding: "1vh"}}><FontAwesomeIcon icon={faTerminal} /></div>
+                            <div onClick={this.onClickMinimizeCosole} id="minimizeConsole"><div className="btn"></div></div>
                             
-                            <iframe height="100" frameBorder="0" scrolling="no"  onLoad={this.resizeIframe} id="appConsole" title="console" style={{width: "89.999%"}}>
+                            <iframe className="pull-left" height="0" frameBorder="0" scrolling="no"  onLoad={this.resizeIframe} id="appConsole" title="console" style={{width: "89.999%"}}>
                             </iframe>
                             
                         </div>
-                        <button className="funcBtn" type="button" onClick={this.consoleLoger }>Run ../</button>
-                        <button className="funcBtn" type="button" onClick={this.clearConsole }>Clear Console() ../</button>
-                        <button className="funcBtn" style={{margin: "0 0.3vw"}} onClick={this.onClickRest}>Restart</button>
-                        
+                        <button className="funcBtn" type="button" onClick={this.consoleLoger }>Run../</button>
                         <button className="funcBtn pull-right" style={{margin: "0"}} onClick={this.onClickNext}>Continue</button>
-
                     </div>
                 </div>
              </div>

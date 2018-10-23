@@ -1,4 +1,4 @@
-#logpage {
+#Signuppage {
     border-top: 0.05vh solid rgba(0, 0, 0, 0.178);
     margin: 0.03vh;
     margin-top: 6vh;
@@ -18,9 +18,19 @@ form input {
     border-radius: 0.2vh;
     outline: none;
     font-size: 2vh;
-    padding: 1.8vh;
+    padding: 1.5vh;
 }
-#logpage button {
+@-webkit-keyframes autofill {
+    to {
+        color: rgb(68, 68, 68);
+        background: rgba(96, 77, 124, 0.096);
+    }
+}
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+#Signuppage button {
     display: block;
     font-size: 2vh;
     width: 100%;
@@ -32,21 +42,4 @@ button[type*=submit] {
     color: white;
     border: none;
     padding: 1.5vh;
-}
-.btnx {
-    border: none;
-    background: none;
-    width: auto;
-    cursor: pointer;
-    padding: 0;
-    text-align: left;
-    margin: 0 0 4vh;
-    font-size: 2vh;
-}
-button#logmessage {
-    border: none;
-    width: auto;
-    margin: auto;
-    color: rgb(140, 224, 125);
-    background: none;
 }

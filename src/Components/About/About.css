@@ -1,0 +1,15 @@
+#About {
+    padding: 6vh 25vw;
+    background: rgba(204, 204, 204, 0.123);
+}
+.aboutHeader {
+    padding: 15vh 0;
+    margin: 0 -25vw;
+    background: rgb(255, 255, 255);
+}
+.abtCont {
+    text-align: left;
+    padding: 0 10vw;
+    position: relative;
+    margin-bottom: 4vh;
+}

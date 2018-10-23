@@ -1,0 +1,49 @@
+#klastLoader {
+    height: 20vh;
+    width: 20vh;
+    position: relative;
+    margin: auto;
+}
+#rot {
+    height: 100%;
+    width: 100%;
+    border: 0.1vh solid #130518;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: rotation 5s infinite reverse;
+}
+
+#rot2 {
+    height: 120%;
+    width: 120%;
+    border: 0.2vh solid #130518;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-animation: rotation 20s infinite linear;
+    top: -10%;
+    left: -10%;
+    border-right-color: transparent;
+}
+
+#klastLoader #dot {
+    height: 2vh;
+    width: 2vh;
+    background: #130518;
+    border-radius: 50%;
+    top: -1vh;
+    left: 7.5vh;
+    position: absolute;   
+}
+#klastLoader img {
+    height: 8vh;
+    margin-top: 6vh;
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(360deg);
+    }
+}

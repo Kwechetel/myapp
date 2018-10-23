@@ -1,52 +1,88 @@
+@media (max-width: 780px) and (min-width: 360px) {
+    #navMenu {
+        width: 100%;
+        right: 0;
+        height: 94vh;
+    }
+}
 .Header, nav {
     z-index: 999999999999;
     width: 100%;
     height: 6vh;
     position: relative;
     font-weight: lighter;
+}
+.Header {
+    position: absolute;
     background: rgb(255, 255, 255);
+    top: 0;
+}
+.userHeader {
+    box-shadow: 0 0 0.3vh rgba(0, 0, 0, 0.287);
+    -moz-box-shadow: 0 0 0.3vh rgba(0, 0, 0, 0.287);
+    -webkit-box-shadow: 0 0 0.3vh rgba(0, 0, 0, 0.287);
+}
+nav {
+    padding: 0 2vw;
 }
 #logo {
     height: 80%;
-    position: absolute;
-    left: 2vh;
-    top: 10%;
+    left: 2vw;
+    margin-top: 0.5vh;
 }
 nav button {
     height: 5vh;
     margin-top: .5vh;
-    margin-right: 2vh;
+    margin-left: 2vh;
     font-size: 1.999vh;
     border: none;
     background: none;
     cursor: pointer;
 }
 nav button.name  {
-    margin-right: 7vh;
+    margin-right: 0;
 }
 nav button#proPic {
     width: 5vh;
+    margin-left: 0;
     background: #ccc;
     color: #ccc;
-    position: absolute;
-    right: .2vh;
+    position: relative;
+    float: right;
 }
 #navMenu {
-    height: 20vh;
+    z-index: 9999999999999999;
     width: 10vw;
-    /*background: rgb(255, 255, 255);*/
-    box-shadow: 0 0 1vh #00000050;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.287);
+    -moz-box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.287);
+    -webkit-box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.287);
+    border: 0.03vh solid rgba(0, 0, 0, 0.1);
     position: absolute;
-    right: 2vh;
+    right: 2vw;
     display: none;
+}
+#menuTangle {
+    position: absolute;
+    bottom: 99%;
+    right: 1vh;
+    margin-left: 1.6vh;
+    border-width: 1.6vh;
+    border-style: solid;
+    border-color: transparent transparent rgb(255, 255, 255) transparent;
+    overflow: visible;
 }
 #navMenu button {
     display: block;
-    width: 10vw;
-    margin: 2vh 0;
+    width: 100%;
+    margin: 0.03vh 0;
+    padding: 2vh 1vh;
     font-size: 2vh;
     text-align: left;
     background: none;
     border: none;
     cursor: pointer;
+}
+#navMenu button:hover {
+    background: rgba(204, 204, 204, 0.157);
 }

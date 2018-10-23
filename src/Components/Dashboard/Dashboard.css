@@ -1,0 +1,19 @@
+#dashboard {
+    padding: 6vh 0;
+}
+#dashHeader {
+    height: 25vh;
+    background: #cccccc;
+    padding: 3vh 10vw;
+    text-align: left;
+}
+.proImage {
+    height: 16vh;
+    width: 13vh;
+    background: coral;
+    border-radius: 1vh;
+    margin-right: 2vw;
+}
+.userDetails {
+    
+}

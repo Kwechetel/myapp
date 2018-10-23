@@ -1,0 +1,19 @@
+.appContainer {
+    padding: 6.5vh 0;
+}
+.hello h1, .hello h4 {
+    font-weight: lighter;
+}
+div.welcome::after {
+    content: "";
+    height: 100vh;
+    width: 100%; 
+    background-image: url(/astronaut.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.04;
+    z-index: -1;
+}

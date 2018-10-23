@@ -2,11 +2,21 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = (props) => {
-    
-    return (
-        <div style={{display: props.style}} className="Footer">
-            <h1>Footer</h1>
+    const main = (
+        <div className="Footer mainFooter row">
+            {props.childrenMain}
         </div>
+    );
+
+    const min = (
+        <div className="Footer minFooter row">
+            {props.childrenMin}
+        </div>
+    );
+
+    const location = window.location.pathname;
+    return (
+        location === "/" ? (props.isUserLogged === null ? min : main): location.startsWith("/tryme") || location.startsWith("/login") || location.startsWith("/signup") ? true :  main 
     );
 }
 

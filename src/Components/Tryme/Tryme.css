@@ -1,11 +1,12 @@
 #tryme{
     position: absolute;
-    top: 0;
+    top: 6vh;
     text-align: left;
-    padding-top: 6vh;
+    padding: 0;
+    padding-top: 0;
     margin: 0; 
     width: 100%;
-    height: 100vh; 
+    height: 94vh; 
     background: #1C232E;
 }
 div.codeApp {
@@ -19,6 +20,7 @@ button.funcBtn {
     height: 3.5vh;
     color: #343233;
     border-radius: 0.3vh;
+    cursor: pointer;
 }
 #trmeCont {
     border: 0.03vh solid #2A303A;
@@ -33,12 +35,27 @@ button.funcBtn {
     width: 100%;
     bottom: 0;
     border: 0.03vh solid #2A303A;
-}
-#runConsoleContainer div {
-    position: relative;
-    float: left;
+    display: none;
 }
 #appConsole {
     max-height: 59.5vh;
     
+}
+#minimizeConsole {
+    z-index: 9999;
+    position: absolute;
+    float: none;
+    border: 1px solid #583A27;
+    font-size: 5vh;
+    right: 0.5vw;
+    top: 1vh;
+    cursor: pointer;
+    padding: 0.8vh ;
+    border-radius: 3px;
+}
+#minimizeConsole .btn {
+    position: relative;
+    background: white;
+    height: 0.2vh;
+    width: 1.5vh;
 }

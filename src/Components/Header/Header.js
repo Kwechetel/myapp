@@ -3,11 +3,9 @@ import "./Header.css";
 
 const Header = (props) => {
     const style = {
-        height: "100%",
-        paddingRight: "2vh"
+        height: "100%"
     };
     const userNavStyle = {
-        boxShadow: "0 1px 1px #ccc",
         position: "fixed",
         top: "0"
     }
@@ -30,10 +28,11 @@ const Header = (props) => {
     ); 
     let users = (
         <React.Fragment>
-            <div style={userNavStyle} className="Header">
+            <div style={userNavStyle} className="Header userHeader">
                 <nav>
 
                     {props.logo}
+                    {props.userAccess}
 
                     <div style={style} className="pull-right">
                         {props.userNav}
