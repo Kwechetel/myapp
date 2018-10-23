@@ -290,8 +290,7 @@ class App extends Component {
             </React.Fragment>}
           childrenMin={
             <React.Fragment>
-              <img className="pull-left" src="/klast-logo.svg" alt='logo' />
-              <p className="pull-left" style={{textAlign: "left"}}>Klast | Code School<br /><i>Learn codes</i></p>
+              <p className="pull-left" style={{textAlign: "left"}}><strong>Klast</strong> | Code School<br /><i>Learn codes</i></p>
 
               <Link to="/policy"><button className="btnPolicy">Privacy Policy</button></Link>
               <span> | </span>

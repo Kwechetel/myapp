@@ -6,7 +6,7 @@
     padding: 2vh 12vw; 
 }
 .mainFooter img {
-    height: 2.8vh;
+    height: 2.5vh;
     margin-right: 0.5vh;
 }
 .mainFooter h2 {
@@ -31,11 +31,6 @@
     border: none;
     margin-top: 2vh;
     font-size: 1.65vh;
-}
-
-.minFooter img {
-    height: 6.5vh;
-    margin-right: 1vw;
 }
 
 .Policy {
