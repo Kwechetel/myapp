@@ -1,1 +1,1 @@
-export const Public_URL = "http://server.klast.academy";
+export const Public_URL = "https://www.server.klast.academy";
