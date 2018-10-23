@@ -15,13 +15,13 @@ class About extends Component{
                     <h3>About Klast Academy</h3>
                     <p><strong>Klast Academy</strong> is an educational platform dedicates to bring your ideas to life through
                     offering coding courses. We are striving to build and give you better skills which helps to solve complicated
-                    problems. Helping people is our everyday experiance, translating that we build it for you </p>
+                    problems. We build it for you and for your future.</p>
                 </div>
 
                 <div className="abtCont">
-                    <p><strong>Klast Academy</strong> is an educational platform dedicates to bring your ideas to life through
-                    offering coding courses. We are striving to build and give you better skills which helps to solve complicated
-                    problems. Helping people is our everyday experiance, translating that we build it for you </p>
+                    {
+                        //<h3>Vision</h3>
+                    }
                 </div>
 
             </div>
