@@ -17,10 +17,11 @@ import Signup from './Components/Signup/Signup';
 import Welcome from './Components/Welcome/Welcome';
 import Users from './Components/Users/Users';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Settings from './Components/Settings/Settings';
 import Library from './Components/Library/Library';
+import Beta from './Components/Beta/Beta';
 import Privacy from './Components/Privacy/Privacy';
 import About from './Components/About/About';
-//import Testrespo from './Components/Tryme/Testrespo';
 import Codemirror from './Components/Tryme/Tryme';
 import {BrowserRouter as Router, Link, NavLink, Switch, Redirect} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
@@ -126,12 +127,12 @@ class App extends Component {
               </React.Fragment>
             } 
             logo={
-              <NavLink to='/'><img className="pull-left" id="logo" src="/klast-logo.svg" alt= "Logo" /></NavLink>
+              <NavLink to='/'><img className="pull-left" id="logo" src="/klast-logo.svg" alt= "Logo" /><i className="pull-left Beta">Beta</i></NavLink>
             }
             userAccess={
               <React.Fragment>
                 <NavLink to='/'><button className="pull-left">Home</button></NavLink>
-                <NavLink to='/library'><button className="pull-left">Library</button></NavLink>
+                {/*<NavLink to='/beta'><button className="pull-left">Beta Courses</button></NavLink>*/}
                 <NavLink to='/dashboard'><button>Dashboard</button></NavLink>
               </React.Fragment>
             }
@@ -173,6 +174,16 @@ class App extends Component {
               );
             }
           }/>
+
+          {/*Beta page*/}
+
+          <Route path='/Beta' exact strict render={
+            () => {
+              return (
+                this.state.login !== null ? (<Beta />)  : (<Redirect to="/" />)
+              );
+            }
+          }/>
           
           {/*Dashboard page*/}
 
@@ -189,7 +200,7 @@ class App extends Component {
           <Route path='/settings' exact strict render={
             () => {
               return (
-                this.state.login === true ? (<div className="appContainer"><h1>Settings</h1></div>) : (<Redirect to="/" />)
+                this.state.login === true ? (<Settings/>) : (<Redirect to="/" />)
               );
             }
           }/>

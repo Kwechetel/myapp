@@ -1,0 +1,20 @@
+#Settingspage {
+
+} 
+#Settingspage .forms {
+    text-align: left;
+    padding: 10vh 25vw;
+}
+#Settingspage form {
+    text-align: right;
+    font-size: 2vh;
+}
+#Settingspage input {
+    margin: 3vh 0 3vh 2vh;
+    padding: 1vh;
+    font-size: 2vh;
+    border-radius: 0.5vh;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0.1vh;
+}

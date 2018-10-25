@@ -15,3 +15,8 @@ a {
 button:focus {
   outline: none;
 }
+.Beta {
+  margin: 0.5vh;
+  color: #1C232E;
+  font-weight: 400;
+}

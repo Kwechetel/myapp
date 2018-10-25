@@ -5,7 +5,7 @@ import queryString from 'query-string';
 
 import {Public_URL} from '../Server/Server';
 
-class Login extends Component{
+class Signup extends Component{
     
     constructor(props) {
         super(props);
@@ -93,4 +93,4 @@ class Login extends Component{
         );
     }
 }
-export default Login;
+export default Signup;

@@ -4,13 +4,13 @@
     margin-top: 6vh;
     padding: 10vh 0;
 }
-.form {
+#Signuppage .form {
     width: 25vw;
     margin: auto;
     padding: 0 2vh;
-    border: 0.03vh solid #ccc;
+    border: 0.01vh solid rgba(0, 0, 0, 0.123);
 }
-form input {
+#Signuppage form input {
     width: 100%;
     margin: 0 0 4vh;
     box-shadow: 0 0 2vh rgba(0, 0, 0, 0.287);
@@ -37,7 +37,7 @@ input:-webkit-autofill {
     margin: 0 0 4vh;
     cursor: pointer;
 }
-button[type*=submit] {
+#Signuppage button[type*=submit] {
     background: #68567A;
     color: white;
     border: none;
