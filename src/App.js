@@ -10,6 +10,7 @@ import { fab, faTwitterSquare, faFacebookSquare } from '@fortawesome/free-brands
 //import { faTwitterSquare } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
+import Modal from './Components/Modal/Modal';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
@@ -89,8 +90,12 @@ class App extends Component {
     let menuBlock = "none";
     let currentState = this.state.usermenu;
     let newState = menuNone;
-    currentState === "none" ? newState = menuNone : newState = menuBlock
+    currentState === "none" ? newState = menuNone : newState = menuBlock;
     this.setState({usermenu: newState});
+  }
+
+  onPagesClick = () => {
+    this.setState({usermenu: "none"});
   }
   
   
@@ -119,15 +124,15 @@ class App extends Component {
           <Header menu={this.state.usermenu} user={this.state.login} 
             navName={
               <React.Fragment>
-                <NavLink to='/tryme/1'><button style={{
-                  background: "#1C232E", height: "auto", color: "white", fontSize: "1.5vh", padding: "0.5vh 1vh"
-                  }}>Try Me</button></NavLink>
+                <NavLink to='/learn/tryme'><button>Try Me</button></NavLink>
                 <NavLink to='/login'><button>Log In</button></NavLink>
-                <NavLink to='/signup'><button>Sign Up</button></NavLink>
+                <NavLink to='/signup'>
+                  <button style={{background:"#0F1E35", color: "white", borderRadius: "0.5vh", padding: "0.8vh 1.5vh", height: "auto"}}>Sign Up</button>
+                </NavLink>
               </React.Fragment>
             } 
             logo={
-              <NavLink to='/'><img className="pull-left" id="logo" src="/klast-logo.svg" alt= "Logo" /><i className="pull-left Beta">Beta</i></NavLink>
+              <NavLink to='/'><img className="pull-left" id="logo" src="/klast-logo.svg" alt= "Klast Academy" /><i className="pull-left Beta">Testing build</i></NavLink>
             }
             userAccess={
               <React.Fragment>
@@ -139,7 +144,7 @@ class App extends Component {
             userNav={
               <React.Fragment>
                 <button className="name">Hi {this.state.user.name}</button>
-                <button onClick={this.onClickUserMenu.bind(this)} id="proPic"></button>
+                <button onClick={this.onClickUserMenu.bind(this)} id="proPic"><img className="avatar" src="/Avatar_1.png" alt="Avatar"/></button>
               </React.Fragment>
             }
             menuLinks={
@@ -151,121 +156,125 @@ class App extends Component {
               </React.Fragment>
             }
           />
-          
 
-          {/*Public/Guest home page*/}
+          <div className="appPages" onClick={this.onPagesClick}>
 
-          <Switch>
+          <Modal/>
 
-          <Route path='/' exact strict render={
-            () => {
-              return (
-                this.state.login === null ? <Welcome /> : <Users />
-              );
-            }
-          }/>
+            {/*Public/Guest home page*/}
 
-          {/*Library page*/}
+            <Switch>
 
-          <Route path='/library' exact strict render={
-            () => {
-              return (
-                this.state.login !== null ? (<Library />)  : (<Redirect to="/" />)
-              );
-            }
-          }/>
+              <Route path='/' exact strict render={
+                () => {
+                  return (
+                    this.state.login === null ? <Welcome /> : <Users />
+                  );
+                }
+              }/>
 
-          {/*Beta page*/}
+              {/*Library page*/}
 
-          <Route path='/Beta' exact strict render={
-            () => {
-              return (
-                this.state.login !== null ? (<Beta />)  : (<Redirect to="/" />)
-              );
-            }
-          }/>
-          
-          {/*Dashboard page*/}
+              <Route path='/library' exact strict render={
+                () => {
+                  return (
+                    this.state.login !== null ? (<Library />)  : (<Redirect to="/" />)
+                  );
+                }
+              }/>
 
-          <Route path='/dashboard' exact strict render={
-            () => {
-              return (
-                this.state.login !== null ? (<Dashboard />)  : (<Redirect to="/" />)
-              );
-            }
-          }/>
+              {/*Beta page*/}
 
-          {/*User Settings page*/}
+              <Route path='/Beta' exact strict render={
+                () => {
+                  return (
+                    this.state.login !== null ? (<Beta />)  : (<Redirect to="/" />)
+                  );
+                }
+              }/>
 
-          <Route path='/settings' exact strict render={
-            () => {
-              return (
-                this.state.login === true ? (<Settings/>) : (<Redirect to="/" />)
-              );
-            }
-          }/>
+              {/*Dashboard page*/}
 
-          {/*Log In page*/}
+              <Route path='/dashboard' exact strict render={
+                () => {
+                  return (
+                    this.state.login !== null ? (<Dashboard />)  : (<Redirect to="/" />)
+                  );
+                }
+              }/>
 
-          <Route path='/login' exact strict render={
-            () => {
-              return (
-                <Login click={this.onClickEventLogin}
-                anchor={<Link to="/signup"><span style={{color: "rgb(68, 56, 80)", fontSize: "1.95vh", fontWeight: "bold"}}>Sign up</span></Link>}
-                logged={this.state.login} />
-              );
-            }
-          }/>
+              {/*User Settings page*/}
 
-          {/*Sign Up page*/}
+              <Route path='/settings' exact strict render={
+                () => {
+                  return (
+                    this.state.login === true ? (<Settings/>) : (<Redirect to="/" />)
+                  );
+                }
+              }/>
 
-          <Route path='/signup' exact strict render={
-            () => {
-              return (
-                this.state.login === null ? (
-                <Signup anchor={
-                  <Link to="/login"><span style={{color: "rgb(68, 56, 80)", fontSize: "1.95vh", fontWeight: "bold"}}>Log in</span></Link>
-                } />
-                ) : (<Redirect to="/" />)
-              );
-            }
-          }/>
+              {/*Log In page*/}
 
-          {/*Sample course page*/}
+              <Route path='/login' exact strict render={
+                () => {
+                  return (
+                    <Login click={this.onClickEventLogin}
+                    anchor={<Link to="/signup"><span style={{color: "rgb(68, 56, 80)", fontSize: "1.95vh", fontWeight: "bold"}}>Sign up</span></Link>}
+                    logged={this.state.login} />
+                  );
+                }
+              }/>
 
-          <Route path='/tryme/:testnum' exact strict render={
-            () => {
-              return (
-                
-                <Codemirror /> 
-                
-              );
-            }
-          }/>
+              {/*Sign Up page*/}
 
-          {/*About page*/}
+              <Route path='/signup' exact strict render={
+                () => {
+                  return (
+                    this.state.login === null ? (
+                    <Signup anchor={
+                      <Link to="/login"><span style={{color: "rgb(68, 56, 80)", fontSize: "1.95vh", fontWeight: "bold"}}>Log in</span></Link>
+                    } />
+                    ) : (<Redirect to="/" />)
+                  );
+                }
+              }/>
 
-          <Route path='/about' exact strict render={
-            () => {
-              return (
-                <About/>
-              );
-            }
-          }/>
+              {/*Sample course page*/}
 
-          {/*Privacy Policy page*/}
+              <Route path='/learn/:testnum' exact strict render={
+                () => {
+                  return (
+                    
+                    <Codemirror /> 
+                    
+                  );
+                }
+              }/>
 
-          <Route path='/policy' exact strict render={
-            () => {
-              return (
-                (<Privacy />)
-              );
-            }
-          }/>
+              {/*About page*/}
 
-          <Route component={notFound} />
+              <Route path='/about' exact strict render={
+                () => {
+                  return (
+                    <About/>
+                  );
+                }
+              }/>
 
-          </Switch>
+              {/*Privacy Policy page*/}
+
+              <Route path='/policy' exact strict render={
+                () => {
+                  return (
+                    (<Privacy />)
+                  );
+                }
+              }/>
+
+              <Route component={notFound} />
+
+            </Switch>
+          </div>
 
           <Footer 
           isUserLogged={
@@ -279,7 +288,7 @@ class App extends Component {
 
               <div className="col-4">
                 <h2>| Learn</h2>
-                <Link to="/tryme/learn"><button>Try Me</button></Link>
+                <Link to="/learn/tryme"><button>Try Me</button></Link>
               </div>
 
               <div className="col-4">
@@ -294,21 +303,35 @@ class App extends Component {
                 <span> | </span>
                 <button style={{cursor: "text"}}>&copy; {new Date().getFullYear()} Klast Academy </button>
 
-                <button className="pull-right fontsAw"><FontAwesomeIcon icon={faTwitterSquare}/></button>
-                <button className="pull-right fontsAw"><FontAwesomeIcon icon={faFacebookSquare}/></button>
+                <a href="https://www.facebook.com/Klast-Academy-2030964817223490/" target="_black">
+                    <button className="pull-right fontsAw"><FontAwesomeIcon icon={faFacebookSquare}/></button>
+                </a>
+                  <button className="pull-right  fontsAw"><FontAwesomeIcon icon={faTwitterSquare}/></button>
               </div>
 
             </React.Fragment>}
           childrenMin={
             <React.Fragment>
-              <p className="pull-left" style={{textAlign: "left"}}><strong>Klast</strong> | Code School<br /><i>Learn codes</i></p>
+              <div className="row">
 
-              <Link to="/policy"><button className="btnPolicy">Privacy Policy</button></Link>
-              <span> | </span>
-              <button style={{cursor: "text"}}>&copy; {new Date().getFullYear()} Klast Academy </button>
+                <div style={{textAlign: "left"}} className="col-4">
+                  <p><strong>Klast</strong> | Code School<br /><i>Learn codes</i></p>
+                </div>
 
-              <button className="pull-right fontsAw"><FontAwesomeIcon icon={faTwitterSquare}/></button>
-              <button className="pull-right fontsAw"><FontAwesomeIcon icon={faFacebookSquare}/></button>
+                <div className="col-4">
+                  <Link to="/policy"><button className="btnPolicy">Privacy Policy</button></Link>
+                  <span> | </span>
+                  <button style={{cursor: "text"}}>&copy; {new Date().getFullYear()} Klast Academy </button>
+                </div>
+
+                <div style={{textAlign: "right"}} className="col-4">
+                  <a href="https://www.facebook.com/Klast-Academy-2030964817223490/" target="_black">
+                    <button className="fontsAw"><FontAwesomeIcon icon={faFacebookSquare}/></button>
+                  </a>
+                  <button className="fontsAw"><FontAwesomeIcon icon={faTwitterSquare}/></button>
+                </div>
+
+              </div>
             </React.Fragment>
           }/>
 

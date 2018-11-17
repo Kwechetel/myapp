@@ -25,6 +25,10 @@ class Signup extends Component{
 
     }
 
+    componentDidMount() {
+        document.title = "Klast | Sign Up";
+    }
+
     handleChangeUid(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -65,11 +69,11 @@ class Signup extends Component{
                         <h2>Sign Up</h2>
 
                         <label>
-                            <input onChange={this.handleChangeUid} onFocus={() => {this.setState({readOnly: false})}} type="text" name="first" placeholder="Name" readOnly={this.state.readOnly} required/>
+                            <input onChange={this.handleChangeUid} onFocus={() => {this.setState({readOnly: false})}} type="text" name="first" placeholder="First Name" readOnly={this.state.readOnly} required/>
                         </label>
 
                         <label>
-                            <input onChange={this.handleChangeUid} onFocus={() => {this.setState({readOnly: false})}} type="text" name="last" placeholder="Surname" readOnly={this.state.readOnly} />
+                            <input onChange={this.handleChangeUid} onFocus={() => {this.setState({readOnly: false})}} type="text" name="last" placeholder="Last Name" readOnly={this.state.readOnly} />
                         </label>
 
                         <label>
@@ -85,6 +89,7 @@ class Signup extends Component{
                             <input onChange={this.handleChangeUid} onFocus={() => {this.setState({readOnly: false})}} type="password" name="pwd" placeholder="Password" readOnly={this.state.readOnly} />
                         </label>
                         <button type="submit">Submit</button>
+                        <div class="g-recaptcha" data-sitekey="6LeqUncUAAAAAF1iAAUw3PorRQwf-6iFGIzSMD7H"></div>
                     </form>
                     <div style={{cursor: "text"}} className="btnx">Don't have an account? {this.props.anchor}</div>
                 </div>

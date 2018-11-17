@@ -3,16 +3,19 @@
 }
 #dashHeader {
     height: 25vh;
-    background: #cccccc;
+    background: #092936;
     padding: 3vh 10vw;
     text-align: left;
+    color: white;
 }
 .proImage {
     height: 16vh;
     width: 13vh;
-    background: coral;
+    background: #092936;
     border-radius: 1vh;
     margin-right: 2vw;
+    border: 0.5vh solid white;
+    overflow: hidden;
 }
 .userDetails {
     

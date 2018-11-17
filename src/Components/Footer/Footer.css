@@ -50,3 +50,16 @@ button.fontsAw {
     padding: 0 0 0 1.5vh;
     cursor: pointer;
 }
+
+@media (max-width: 780px) and (min-width: 360px) {
+    .minFooter {
+        height: auto;
+    }
+    .minFooter div[class*='col-'] {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .minFooter div[class*='pull-']  {  
+    }
+}

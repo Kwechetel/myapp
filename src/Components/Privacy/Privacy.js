@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Privacy.css';
 
 class Privacy extends Component{
+    componentDidMount() {
+        document.title = "Klast | Privacy";
+    }
 
     render() {
         return(

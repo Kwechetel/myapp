@@ -16,7 +16,7 @@ const Footer = (props) => {
 
     const location = window.location.pathname;
     return (
-        location === "/" ? (props.isUserLogged === null ? min : main): location.startsWith("/tryme") || location.startsWith("/login") || location.startsWith("/signup") ? true :  main 
+        location === "/" ? (props.isUserLogged === null ? min : main): location.startsWith("/learn/tryme") || location.startsWith("/login") || location.startsWith("/signup") ? true :  main 
     );
 }
 

@@ -9,6 +9,9 @@ class Dashboard extends Component{
     }
 
     componentDidMount() {
+
+        document.title = "Klast | Dashboard";
+
         const qs = queryString;
 
         const userData = qs.parse(atob(localStorage.getItem("a-utn")));
@@ -23,6 +26,7 @@ class Dashboard extends Component{
             <div id="dashboard" className="appContainer">
                 <div id="dashHeader">
                     <div className="proImage pull-left">
+                        <img className="avatar" src="/Avatar_1.png" alt="Avatar"/>
                     </div>
                     <div className="userDetails pull-left">
                         <h1>{this.state.userid.name} {this.state.userid.surname}</h1>

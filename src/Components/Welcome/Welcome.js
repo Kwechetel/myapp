@@ -7,6 +7,10 @@ import './Welcome.css';
 
 class Welcome extends Component{
 
+    componentDidMount() {
+        document.title = "Klast | Welcome!";
+    }
+
     render() {
         const style = {
             margin: "0"

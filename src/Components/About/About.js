@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './About.css';
 
 class About extends Component{
+
+    componentDidMount() {
+        document.title = "Klast | About";
+    }
+
     render() {
         
         return(

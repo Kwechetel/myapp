@@ -23,7 +23,7 @@ import 'codemirror/theme/monokai.css';
 
 class Codemirror extends Component {
     state = {
-        value: 'const a = (x) => {\n let y = 10 * x; \n return console.log("hello"); \n} \n // Call this function on line bellow:',
+        value: "const myCode = \"Hello World\"",
         testnum: 0
     }
     
@@ -74,6 +74,7 @@ class Codemirror extends Component {
 
     componentDidMount() {
         this.getLocalStorage();
+        document.title = "Klast | Tryme";
     }
 
     consoleLoger = () => {
@@ -81,17 +82,21 @@ class Codemirror extends Component {
             let logger = document.querySelector("#appConsole");
             document.querySelector("#runConsoleContainer").style.display = "block";
 
+            let codes = this.state.value;
+
+            //alert(JSON.stringify(codes));
+
             logger.contentWindow.location.reload();
 
             const qs = queryString;
         
-            axios.post(Public_URL+`/console/tryme.php`, qs.stringify({codes: this.state.value}))
+            axios.post(Public_URL+`/console/tryme.php`, qs.stringify({codes: codes}))
             .then(res => {
                 const response = res.data;
 
                 //console.log(response);
 
-                var myIframe = logger,
+                let myIframe = logger,
                 iframeWindow = myIframe.contentWindow || myIframe,
                 iframeDocument = myIframe.contentDocument || iframeWindow.document;
 

@@ -3,6 +3,10 @@ import './Users.css';
 
 class Users extends Component{
 
+    componentDidMount() {
+        document.title = "Klast | Code School";
+    }
+
     render() {
         return(
             <div className="appContainer">

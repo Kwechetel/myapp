@@ -36,10 +36,11 @@ button.funcBtn {
     bottom: 0;
     border: 0.03vh solid #2A303A;
     display: none;
+    max-height: 59.5vh;
+    overflow-x: auto;
 }
 #appConsole {
-    max-height: 59.5vh;
-    
+        
 }
 #minimizeConsole {
     z-index: 9999;

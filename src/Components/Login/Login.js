@@ -25,6 +25,10 @@ class Login extends Component{
 
     }
 
+    componentDidMount() {
+        document.title = "Klast | Log In";
+    }
+
     handleChangeUid(e) {
         this.setState({
             [e.target.name]: e.target.value

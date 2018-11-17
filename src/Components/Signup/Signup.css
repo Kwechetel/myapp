@@ -11,11 +11,12 @@
     border: 0.01vh solid rgba(0, 0, 0, 0.123);
 }
 #Signuppage form input {
+    background: #F0EEF3;
     width: 100%;
     margin: 0 0 4vh;
-    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.287);
+    /*box-shadow: 0 0 2vh rgba(0, 0, 0, 0.287);*/
     border: none;
-    border-radius: 0.2vh;
+    border-radius: 5vh;
     outline: none;
     font-size: 2vh;
     padding: 1.5vh;
@@ -39,7 +40,19 @@ input:-webkit-autofill {
 }
 #Signuppage button[type*=submit] {
     background: #68567A;
+    background: #68567A;
     color: white;
     border: none;
+    border-radius: 5vh;
     padding: 1.5vh;
+}
+
+@media (max-width: 780px) and (min-width: 360px) {
+    #Signuppage {
+        padding-top: 5vh;
+    }
+    #Signuppage .form  {
+        width: 75vw;
+        border: none;
+    }
 }

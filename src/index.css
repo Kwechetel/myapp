@@ -17,6 +17,14 @@ button:focus {
 }
 .Beta {
   margin: 0.5vh;
-  color: #1C232E;
+  margin-top: 0.8vh;
+  padding: 0.1vh 1vh;
+  color: rgb(17, 18, 19);
+  background: rgb(216, 197, 110);
   font-weight: 400;
+  font-size: 1.5vh;
+}
+.avatar {
+  height: 100%;
+  width: 100%;
 }
