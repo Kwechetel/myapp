@@ -4,6 +4,9 @@ import axios from 'axios';
 import queryString from 'query-string';
 import {getCookie} from '../Cookies/Cookies';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import {Public_URL} from '../Server/Server';
 
 class Settings extends Component{
@@ -44,6 +47,14 @@ class Settings extends Component{
             uid: userData.username
         })
 
+        const getNotify = localStorage.getItem("s-stin");
+
+        if(getNotify !== null) {
+            document.querySelector(".Notify").style.display = "block";
+        }
+
+        localStorage.removeItem("s-stin");
+
     }
 
     handleChangeUid(e) {
@@ -67,7 +78,8 @@ class Settings extends Component{
 
                 let encodAccess = btoa(x);
                 localStorage.setItem("a-utn", encodAccess);
-                window.location.replace('/settings?successfully');
+                localStorage.setItem("s-stin", "changes saved");
+                window.location.replace('/settings');
             }else {
                 alert(JSON.stringify(response));
                 
@@ -89,8 +101,13 @@ class Settings extends Component{
                 axios.post(Public_URL+`/includes/settings.inc.php`, qs.stringify({submit_pwd:true, id:usid, old_pwd: this.state.old_pwd, pwd: this.state.pwd}))
                 .then(res => {
                     const response = res.data;
-
-                    alert(response);
+                    if(response === "Wrong password") {
+                        alert(response);
+                    }else {
+                        localStorage.setItem("s-stin", "changes saved");
+                        window.location.replace('/settings');
+                        alert(response);
+                    }
                 })            
             }else {
                 document.querySelector('.confirmedPwd').style.borderColor = "red";
@@ -111,10 +128,45 @@ class Settings extends Component{
         document.querySelector("#pwdBtn").removeAttribute("disabled");
     }
 
+    closeNotify() {
+        document.querySelector(".Notify").style.display = "none";
+    }
+
     render() {
 
         return(
             <div id="Settingspage" className="appContainer">
+
+                <div className="Notify" style={{
+                    display: "none",
+                    position: "relative",
+                    width: "75vw",
+                    padding: "0.01vh 0",
+                    left: "12.5vw",
+                    top: "10vh",
+                    boxShadow: "0 0 0.3vh rgba(0, 0, 0, 0.287)",
+                    fontSize: "1.5vh",
+                    background: "#f4f8f9"
+                }}>
+
+                    <p>Changes saved successfully!</p>
+
+                    <button style={{
+                        position: "absolute",
+                        height: "100%",
+                        right: "1vw",
+                        top: "0",
+                        fontSize: "1.5vh",
+                        fontWeight: "lighter",
+                        border: "none",
+                        background: "none",
+                        cursor: "pointer"
+                    }}
+                    onClick={this.closeNotify}>
+                        <FontAwesomeIcon icon={faTimes} />
+                    </button>
+
+                </div>
                 <div className='forms'>
 
                     <div>
